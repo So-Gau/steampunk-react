@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+header {
+  height: 50px;
+  .mobile-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    z-index: 999;
+    background: transparent;
+    cursor: pointer;
+
+    .line {
+      width: 30px;
+      height: 4px;
+      background-color: #4f5154;
+      transition: transform 0.5s ease-in-out;
+      border-radius: 10px;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &.open {
+      transition: 500ms all;
+      .line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      .line:nth-child(2) {
+        opacity: 0;
+      }
+      .line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// gère open et close du navMobile
+
+#navMobile {
+  transform: translate(100vw);
+  transition: all 500ms;
+  &.open {
+    transition: all 500ms;
+    transform: translate(0vw);
+  }
+}
+
+// scss for menu mobile
+
+#navMobile {
+  width: 100%;
+  height: 100vh;
+  ul {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top left, #210e02 0%, #151917 100%);
+    li {
+      list-style: none;
+      position: relative;
+      padding: 40px 0;
+      transition: 500ms;
+      a {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+        font-family: "Black Ops One", cursive;
+        color: #391800;
+        font-size: 20px;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+      &:nth-child(1) {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
+        text-align: right;
+        &::before {
+          display: block;
+          content: "";
+          background-image: url("../../assets/card/card1.png");
+          clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
+          background-position: -113px -94px;
+          background-size: 477px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          opacity: 0.6;
+          height: 100%;
+        }
+      }
+      &:nth-child(2) {
+        text-align: left;
+        position: relative;
+        bottom: 35px;
+        clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 85%);
+        &::before {
+          display: block;
+          content: "";
+          background-image: url("../../assets/card/card2.png");
+          clip-path: polygon(0% 40%, 100% 0%, 100% 100%, 0% 85%);
+          background-position: 79px -52px;
+          background-size: 300px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          opacity: 0.6;
+          height: 100%;
+        }
+      }
+      &:nth-child(3) {
+        clip-path: polygon(0% 0%, 100% 15%, 100% 65%, 0% 100%);
+        text-align: right;
+        position: relative;
+        bottom: 44px;
+        &::before {
+          display: block;
+          content: "";
+          background-image: url("../../assets/card/card3.png");
+          clip-path: polygon(0% 0%, 100% 15%, 100% 65%, 0% 100%);
+          background-position: 301px -51px;
+          background-size: 311px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          opacity: 0.6;
+          height: 100%;
+        }
+      }
+      &:nth-child(4) {
+        clip-path: polygon(0% 35%, 100% 0%, 100% 100%, 0% 85%);
+        text-align: left;
+        position: relative;
+        bottom: 74px;
+        &::before {
+          display: block;
+          content: "";
+          background-image: url("../../assets/card/card4.png");
+          clip-path: polygon(0% 35%, 100% 0%, 100% 100%, 0% 85%);
+          background-position: 357px -49px;
+          background-size: 300px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          opacity: 0.6;
+          height: 100%;
+        }
+      }
+      &:nth-child(5) {
+        clip-path: polygon(0% 0%, 100% 15%, 100% 65%, 0% 100%);
+        text-align: right;
+        position: relative;
+        bottom: 83px;
+        &::before {
+          display: block;
+          content: "";
+          background-image: url("../../assets/card/card5.png");
+          clip-path: polygon(0% 0%, 100% 15%, 100% 65%, 0% 100%);
+          background-position: 245px -49px;
+          background-size: 259px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          opacity: 0.6;
+          height: 100%;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &:nth-child(6) {
+        background: transparent;
+        clip-path: polygon(0% 35%, 100% 0%, 100% 100%, 0% 100%);
+        text-align: left;
+        position: relative;
+        bottom: 113px;
+        a {
+          color: #ffe9cf;
+          background: linear-gradient(
+            90deg,
+            rgba(66, 49, 44, 1) 0%,
+            rgba(9, 4, 5, 1) 100%
+          );
+          border: 2px solid;
+          padding: 7px;
+          top: 17px !important;
+        }
+      }
+      &:nth-child(odd) {
+        a {
+          bottom: 5px;
+          right: 39px;
+        }
+      }
+      &:nth-child(even) {
+        a {
+          top: 8px;
+          left: 39px;
+        }
+      }
+      &:hover {
+        transition: 500ms all;
+        &::before {
+          opacity: 1;
+        }
+        a {
+          color: #ffffff;
+          text-shadow: #000 2px 0 3px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 360px) {
+  header {
+    height: 50px;
+    .mobile-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 24px;
+      position: absolute;
+      top: 15px;
+      right: 17px;
+      z-index: 999;
+      background: transparent;
+      cursor: pointer;
+
+      .line {
+        width: 30px;
+        height: 4px;
+        background-color: #4f5154;
+        transition: transform 0.5s ease-in-out;
+        border-radius: 10px;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+
+      &.open {
+        transition: 500ms all;
+        .line:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+        .line:nth-child(2) {
+          opacity: 0;
+        }
+        .line:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  // scss for menu mobile
+
+  #navMobile {
+    ul {
+      li {
+        padding: 57px 0;
+        a {
+        }
+        &:nth-child(1) {
+          &::before {
+            background-size: cover;
+            background-position: -47px -46px;
+          }
+        }
+        &:nth-child(2) {
+          bottom: 47px;
+          &::before {
+            background-size: cover;
+            background-position: 72px -82px;
+          }
+        }
+        &:nth-child(3) {
+          bottom: 59px;
+          &::before {
+            background-size: cover;
+          }
+        }
+        &:nth-child(4) {
+          bottom: 98px;
+          &::before {
+            background-size: cover;
+            background-position: 363px -70px;
+          }
+        }
+        &:nth-child(5) {
+          bottom: 109px;
+          &::before {
+            background-position: 285px -87px;
+            background-size: cover;
+          }
+          &:hover {
+          }
+        }
+        &:nth-child(6) {
+          bottom: 140px;
+          padding: 40px 0;
+          a {
+          }
+        }
+        &:nth-child(odd) {
+          a {
+          }
+        }
+        &:nth-child(even) {
+          a {
+          }
+        }
+        &:hover {
+          &::before {
+          }
+          a {
+          }
+        }
+      }
+    }
+  }
+}
